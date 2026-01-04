@@ -28,11 +28,13 @@ public class BillingController {
         Long userId = 1L;
         return ResponseEntity.ok(subscriptionService.getCurrentSubscription());
     }
+
     @PostMapping("/api/stripe/checkout")
     public ResponseEntity<CheckoutResponse> createCheckoutResponse(@RequestBody CheckoutRequest checkoutRequest) {
-        Long userId=1L;
+        Long userId = 1L;
         return ResponseEntity.ok(subscriptionService.getCheckoutSessionUrl(checkoutRequest, userId));
     }
+
     @PostMapping("/api/stripe/portal")
     public ResponseEntity<PortalResponse> openCustomPortal() {
         Long userId = 1L;
